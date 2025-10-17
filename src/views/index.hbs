@@ -4,50 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Web</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href='/assets/css/style.css?v=2'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
 </head>
-<body id="bodi">
-
-    <nav class="nav">
+<body>
+    <div class="navgur"  style="display: flex;align-items: center;justify-content: space-between;max-width: 1216px;height: 36px;margin: 0px auto 96px;padding: 16px 32px; position:sticky;">
       <div class="logo"><img src="https://suryaelz.vercel.app/img/logo.svg" alt="logo"></div>
       <div class="links">
       <a href="#tech">Tech Stack</a>
       <a href="#experience">Experience</a>
       <a href="#myproject">Projects</a>
       <span class="contact"><a href="https://web.whatsapp.com/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png">Let's Talk</a></span>
-      <span class="download"><a href="https://drive.google.com/file/d/1LnSqtBgtwJVPSMF1t4FIdQTmQ9HEejQE/view?usp=sharing" target="_blank"><img src="/src/assets/uploads/download.png">Download CV</a></span>
-      <a href="">Login</a>
+      <span class="download"><a href="https://drive.google.com/file/d/1LnSqtBgtwJVPSMF1t4FIdQTmQ9HEejQE/view?usp=sharing" target="_blank"><img src="https://uxwing.com/wp-content/themes/uxwing/download/file-and-folder-type/file-color-red-icon.png">Download CV</a></span>
+      {{#if afterLogin}}
+      <a href="/logout">{{afterLogin}}</a>
+      {{/if}}
+      {{#if beforeLogin}}
+      <a href="/login">{{beforeLogin}}</a>
+      {{/if}}
       </div>
-    </nav>
+    </div>
 
 
 
     <section class="data-diri">
-      <div class="profile"><img src="/src/assets/uploads/profile.jpg"></div>
+      {{#if profile}}
+      <div class="profile"><img src="../assets/uploads/{{profile}}"></div>
+      {{/if}}
       <article class="paragraph">
         <h1>Hi, I'm Danar 👋</h1>
         <h3>Indie Hacker & Full-Stack Developer</h3>
         <p>I build and ship digital products from scratch to production. Passionate about creating end-to-end solutions and turning ideas into fully functional applications. With expertise in both frontend and backend development,<br> I handle everything from initial concept to deployment and maintenance.</p>
         <div class="address">
-        <span><img src="https://www.svgrepo.com/show/424575/location-direction-gps.svg"><p>Depok, Sawangan, Indonesia</p></span>
-        <span>
-          <ul>
-            <li>Available for new projects</li>  
-          </ul>
-        </span>
+          <span><img src="https://www.svgrepo.com/show/424575/location-direction-gps.svg"><p>Depok, Sawangan, Indonesia</p></span>
+          <span>
+            <ul>
+              <li>Available for new projects</li>  
+            </ul>
+          </span>
         </div>
         <span class="contact-profile"><a href="https://web.whatsapp.com/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png">Let's Talk</a></span>
-        <span class="download-profile"><a href="https://drive.google.com/file/d/1LnSqtBgtwJVPSMF1t4FIdQTmQ9HEejQE/view?usp=sharing" target="_blank"><img src="/src/assets/uploads/download.png">Download CV</a></span>
+        <span class="download-profile"><a href="https://drive.google.com/file/d/1LnSqtBgtwJVPSMF1t4FIdQTmQ9HEejQE/view?usp=sharing" target="_blank"><img src="https://uxwing.com/wp-content/themes/uxwing/download/file-and-folder-type/file-color-red-icon.png">Download CV</a></span>
       </article>
     </section> 
 
 
 
     <section class="tools">
-        <h1 id="tech">
+        <h1   id="tech">
           Tech Stack - Tools I Use Everyday
         </h1>
         <div class="background-card">
@@ -69,7 +75,7 @@
           <div class="small-card">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png">
 
-            <label>Javascript</label>
+            <label>React</label>
           </div>
           <div class="small-card">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/2048px-Unofficial_JavaScript_logo_2.svg.png">
@@ -84,15 +90,16 @@
 
 
     <section class="exp">
-      <div class="add" id="experience">
-        <a href="#"><img src="https://www.svgrepo.com/show/305547/plus-circle-outline.svg"></a>
-        <h1 id="myproject">Work Experiences:</h1>
+      <div class="kelogin" id="experience">
+        <a href="/ke_exp"><img src="https://www.svgrepo.com/show/305547/plus-circle-outline.svg" style="  width: 32px;height: 32px;margin: 0 10px 0 0; padding: 8px 0;float: left;vertical-align: text-bottom;"></a>
+        <h1 >Work Experiences:</h1>
       </div>
-        <div class="exp-card">
+
+        <div class="exp-card" >
           <div class="exp-img">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMbfZyoxEp9R0ZfOoZLtmKjlM_4ca5Ti8HzA&s">
           </div>
-            <h3>Mentor Full Stack Web Developer</h3>
+            <h3 >Mentor Full Stack Web Developer</h3>
             <span class="sub-title">
               <h4>Dumbways indonesia</h4>
               <p>Otc 2022 - Present</p>
@@ -110,21 +117,43 @@
               <span>Node.js</span>
               <span>Express</span>
               <span>PostgreSQL</span>
-          </div>
+            </div>
         </div>
+      {{#each resultE.rows}}
+        <div class="exp-card">
+          <div class="exp-img">
+          <img src="../assets/uploads/{{this.logo_perusahaan}}">
+          </div>
+            <h3>{{this.pekerjaan}}</h3>
+            <span class="sub-title">
+              <h4>{{this.perusahaan}}</h4>
+              <p>{{this.start_date}} - {{this.end_date}}</p>
+            </span>
+            <ul>
+              {{#each (splitLines this.deskripsi)}}
+              <li>{{this}}</li>
+              {{/each}}
+            </ul>
+            <div class="exp-tech">
+                {{#each this.tech_stack}}
+                <span>{{this}}</span>
+                {{/each}}
+            </div>
+        </div>
+        {{/each}}
         
     </section>
 
     
 
     <section class="projects">
-      <div class="add">
-        <a href="#"><img src="https://www.svgrepo.com/show/305547/plus-circle-outline.svg"></a>
+      <div class="kelogin">
+        <a href="/keproject"><img src="https://www.svgrepo.com/show/305547/plus-circle-outline.svg" style="  width: 32px;height: 32px;margin: 0 10px 0 0;padding: 8px 0;float: left;vertical-align: text-bottom;"></a>
         <h1 id="myproject">My Projects:</h1>
       </div>
-        <div class="project-card">        
+        <div class="project-card" >        
             <div class="project-img">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg">
+              <img src="https://suryaelz.vercel.app/img/projects/fakturly.png">
             </div>
             <div class="project-card-text">
               <h3>Fakturly</h3>
@@ -144,22 +173,20 @@
               </div>
             </div>
         </div>
-
+        {{#each resultP.rows}}
         <div class="project-card">        
             <div class="project-img">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg">
+              <img src="../assets/uploads/{{this.img_project}}">
             </div>
             <div class="project-card-text">
-              <h3>Fakturly</h3>
+              <h3>{{this.project_name}}</h3>
               <p>
-                Digital invoice and payment reminder solution that makes billing management easier. Built with modern tech stack for optimal performance.
+                {{this.deskripsi}}
               </p>
               <div class="project-tech">
-                <span>JavaScript</span>
-                <span>React</span>
-                <span>Node.js</span>
-                <span>Express</span>
-                <span>PostgreSQL</span>
+                {{#each this.tech_project}}
+                <span>{{this}}</span>
+                {{/each}}
               </div>
               <div class="test-tech">
                 <span><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg">Private Repository</span>
@@ -167,7 +194,7 @@
               </div>
             </div>
         </div>
-
+        {{/each}}
     </section>
 
 
@@ -178,7 +205,7 @@
       <div class="memo-contact">
         <span><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg">suryaelidanto@gmail.com</span>
         <span>|</span>
-        <span><img src="https://www.svgrepo.com/show/510970/external-link.svg">+62 878-776-18724</span>
+        <span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png">+62 878-776-18724</span>
       </div>
     </section>
 
@@ -193,6 +220,6 @@
         </div>
       </div>
     </footer>
-    <script src="index.js"></script>
+    <script src="../assets/js/script.js"></script>
 </body>
 </html>

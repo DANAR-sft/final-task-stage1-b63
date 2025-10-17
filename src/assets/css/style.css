@@ -10,30 +10,30 @@ body {
 }
 
 a {
-    color: black;
-    text-decoration: none;
+   text-decoration: none; 
+   color: black;
 }
 
-.add img {
+.form-login {
 
-  width: 32px;
-  height: 32px;
-  margin: 0 10px 0 0;
-  padding: 8px 0;
-  float: left;
-  vertical-align: text-bottom;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 25%;
+  margin: 250px auto;
+  padding: 50px;
 
-}
+};
 
-.nav {
+.navgur {
+
     display: flex;
     align-items: center;
     justify-content: space-between;
     max-width: 1216px;
     height: 36px;
-    position: sticky;
     margin: 0px auto 96px;
     padding: 16px 32px;
+    
 }
 
 .logo img {
@@ -154,6 +154,12 @@ a {
     margin: 0px 8px 0px 0px;
 }
 
+.address span ul::marker {
+ 
+  color: green;
+
+}
+
 .address span ul li {
     list-style-position: inside;
     font-size: 16px;
@@ -233,14 +239,30 @@ a {
     padding: 0px 16px;
 }
 
+.small-card label {
+
+    font-size: 14px;
+
+}
+
 .small-card img {
     box-shadow: grey 0px 2px 8px -6px;
     width: 40px;
     height: 40px;
     border-radius: 12px;
     padding: 12px;
-    margin: 0px 0px 20px;
+    margin: 0px 0px 20px 0;
     transition: 0.3s linear;
+}
+
+.small-card img:hover {
+
+    box-shadow: grey 0px 4px 12px -6px;
+    width: 45px;
+    height: 45px;
+    margin: 0px 0px 15px 0;
+    transition: 0.3 linear;
+
 }
 
 /* halaman experience  */
@@ -259,6 +281,8 @@ a {
     border-radius: 15px;
     margin: 24px auto;
     padding: 32px;
+    overflow: hidden;
+    
 }
 
 .exp-card h3 {
@@ -268,7 +292,7 @@ a {
 .exp-img {
     height: 236px;
     float: left;
-    margin: 0px 30px 0px 0px;
+    margin: 0px 50px 0px 0px;
 }
 
 .exp-img img {
@@ -292,9 +316,12 @@ a {
 }
 
 .exp-card ul {
-    list-style-position: inside;
+    max-width: 780px;
+    list-style-position: outside;
     font-size: 14px;
     line-height: 24px;
+    white-space: normal;       
+    word-wrap: break-word;   
 }
 
 .exp-tech {
@@ -329,6 +356,8 @@ a {
 }
 
 .project-img {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
     background-color: rgb(243, 244, 246);
     max-width: 568px;
     text-align: center;
@@ -350,9 +379,14 @@ a {
 }
 
 .project-card-text p {
+
     font-size: 14px;
     font-weight: 100;
+    white-space: normal;       
+    word-wrap: break-word;     
     margin: 0px 0px 16px;
+    overflow: hidden;
+    
 }
 
 .project-tech {
@@ -436,7 +470,7 @@ a {
 
 .footer {
     width: 100%;
-    border-top: 1px solid black;
+    border-top: 1px solid rgb(211, 211, 211);
 }
 
 .footer-wrapper {
